@@ -1,5 +1,6 @@
 import { Contact } from "@prisma/client";
 import Link from "next/link";
+import DeleteButton from "./DeleteButton";
 
 type Props = { contact: Contact };
 
@@ -21,9 +22,7 @@ export default function ContactCard({ contact }: Props) {
             View
           </button>
         </Link>
-        <button className="bg-red-600 px-1 py-0.5 rounded-md text-white">
-          Delete
-        </button>
+        <DeleteButton id={contact.id} />
       </div>
     </div>
   );
